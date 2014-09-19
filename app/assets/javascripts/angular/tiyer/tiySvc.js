@@ -14,14 +14,17 @@ angular.module("tiyApp")
 
     };
 
-    // var findProductByIdx = function (id) {
-    //       return $http.get(tiyers + "/" + id);
-    //      };
+    var getTiyer = function(id) {
+        return $http.get(tiyers + "/" + id);
+      };
+
+      
 
       return{
         getTiyers : getTiyers,
         submitTiyer : submitTiyer,
-        // findProductByIdx : findProductByIdx
+        getTiyer : getTiyer
+
 
       }
   });

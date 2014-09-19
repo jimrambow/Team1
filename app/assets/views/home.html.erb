@@ -1,26 +1,36 @@
 
-<div class="container">
-	<aside class="leftSide">
-		<div class="TIY">
-				<img src="" alt="IRON YARD LOGO" />
-				<p>Established:</p>
-				<p>INFORMATION ABOUT TIY</p>
+<div class="row container">
+	<div class="large-12 large-centered columns">
+		<div class="large-12 large-centered columns">
+			<aside class="leftSide">
+				<div class="TIY">
+						<img src="http://theironyard.com/images/iron-yard-logo.svg" alt="IRON YARD LOGO" />
+						<h2>Established: A long time ago in a galaxy far, far away....</h2>
+						<h3>The Iron Yard exists to create exceptional value for people and their ideas through code education, startup accelerators and coworking spaces.</h3>
+				</div>
+					<a href="#/create" class="button">Create Profile Card</a>
+				<div class="filters">
+					<!-- <div class="row"> -->
+						<fieldset class="small-12 columns">
+							<legend>List Filters</legend>
+					<div class="small-4 columns"><input type="text" ng-model="tiyer.first_name" placeholder="Search By First Name"></div>
+					<div class="small-4 columns"><input type="text" ng-model="tiyer.last_name" placeholder="Search By Last Name"></div>
+					<div class="small-4 columns"><input type="text" ng-model="tiyer.tiy_type" placeholder="Search By Type"></div>
+				</fieldset>
+				<!-- </div> -->
+			</aside>
 		</div>
+	</div>
 
-		<div class="filters">
-			<a href="#/create">create</a>
-			<p>FILTER ONE</p>
-			<p>FILTER ONE</p>
-			<p>FILTER ONE</p>
+<div class="large-12 columns tiyersList">
+	<div  ng-repeat="tiyer in tiyers | filter: tiyer.first_name | filter: tiyer.last_name | filter: tiyer.tiy_type">
+		<div class="large-4 columns">
+			<a href="#/show/{{tiyer.id}}"><div class="panel tiyerCard">
+					<h2>{{tiyer.first_name}} {{tiyer.last_name}}</h2>
+					<img src="https://s3.amazonaws.com/uploads.hipchat.com/31349/591869/kpfZck2tc3x8dyQ/nickguin.jpg" alt="" />
+					<p><a href="http://github.com/{{tiyer.github}}">GitHub Profile</a></p>
+					<p>{{tiyer.tiy_type}}</p>
+				</div></a>
 		</div>
-	</aside>
-
-<div class="tiyerList">
-	<div  ng-repeat="tiyer in tiyers">
-		<div>
-			<h2>{{tiyer.first_name}} {{tiyer.last_name}}</h2>
-			<p><a href="{{tiyer.github}}">GitHub</a></p>
-			<p>{{tiyer.tiy_type}}</p>
-		</div>
-	</div
+	</div>
 </div>
