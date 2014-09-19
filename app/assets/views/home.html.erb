@@ -5,21 +5,25 @@
 			<aside class="leftSide">
 				<div class="TIY">
 						<img src="http://theironyard.com/images/iron-yard-logo.svg" alt="IRON YARD LOGO" />
-						<h2>Established: A long time ago in a galaxy far,far away....</h2>
+						<h2>Established: A long time ago in a galaxy far, far away....</h2>
 						<h3>The Iron Yard exists to create exceptional value for people and their ideas through code education, startup accelerators and coworking spaces.</h3>
 				</div>
 					<a href="#/create" class="button">Create Profile Card</a>
 				<div class="filters">
-					<p>FILTER ONE |</p>
-					<p>FILTER TWO |</p>
-					<p>FILTER THREE</p>
-				</div>
+					<!-- <div class="row"> -->
+						<fieldset class="small-12 columns">
+							<legend>List Filters</legend>
+					<div class="small-4 columns"><input type="text" ng-model="tiyer.first_name" placeholder="Search By First Name"></div>
+					<div class="small-4 columns"><input type="text" ng-model="tiyer.last_name" placeholder="Search By Last Name"></div>
+					<div class="small-4 columns"><input type="text" ng-model="tiyer.tiy_type" placeholder="Search By Type"></div>
+				</fieldset>
+				<!-- </div> -->
 			</aside>
 		</div>
 	</div>
 
 <div class="large-12 columns tiyersList">
-	<div  ng-repeat="tiyer in tiyers">
+	<div  ng-repeat="tiyer in tiyers | filter: tiyer.first_name | filter: tiyer.last_name | filter: tiyer.tiy_type">
 		<div class="large-4 columns">
 			<a href="#/show/{{tiyer.id}}"><div class="panel tiyerCard">
 					<h2>{{tiyer.first_name}} {{tiyer.last_name}}</h2>

@@ -6,16 +6,18 @@ body{
 
  .leftSide{
   text-align:center;
-
+    legend{
+     text-align:left;
+    }
   .button{
    background:#008CBA;
   }
 
-  .filters{
+  /* .filters{
    p{
    display:inline-block;
   }
-  }
+  } */
  }
 
  .tiyerCard{
